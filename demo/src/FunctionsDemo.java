@@ -14,7 +14,7 @@ public class FunctionsDemo {
 	}
 
 	// Variable number of arguments
-	public static void greetings(String message, String... names) {
+	public static void greetings(String message, String ... names) {
 		for (String n : names)
 			System.out.printf("%s %s\n",message, n);
 	}
