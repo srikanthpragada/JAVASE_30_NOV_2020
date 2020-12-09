@@ -7,31 +7,30 @@ public class SavingsAccount {
 	private double balance;
 
 	// Constructor
-	public SavingsAccount(int ano, String name) {
-		acno = ano;
-		ahname = name;
-		balance = 0;
+	public SavingsAccount(int acno, String ahname) {
+		this.acno = acno;
+		this.ahname = ahname;
 	}
 
-	public SavingsAccount(int ano, String name, double bal) {
-		acno = ano;
-		ahname = name;
-		balance = bal;
+	public SavingsAccount(int acno, String ahname, double balance) {
+	    this(acno,ahname);  // call another constructor 
+		this.balance = balance;
 	}
 
 	// Methods
 	public void print() {
-		System.out.println(acno);
-		System.out.println(ahname);
-		System.out.println(balance);
+		System.out.println(this.acno);
+		System.out.println(this.ahname);
+		System.out.println(this.balance);
+	
 	}
 
 	public void deposit(double amount) {
-		balance += amount;
+		this.balance += amount;
 	}
 
 	public double getBalance() {
-		return balance;
+		return this.balance;
 	}
 
 }
