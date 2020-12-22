@@ -39,11 +39,11 @@ public class SavingsAccount {
 		this.balance += amount;
 	}
 
-	public void withdraw(double amount) {
+	public void withdraw(double amount) throws InsufficientFundsException {
 		if (this.balance - SavingsAccount.minbal >= amount)
 			this.balance -= amount;
 		else
-			System.out.println("Insufficient Balance!");
+			throw new InsufficientFundsException(this.balance);
 	}
 
 	public double getBalance() {
